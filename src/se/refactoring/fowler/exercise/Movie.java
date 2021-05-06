@@ -7,6 +7,7 @@ public class Movie {
 
     private String title;
     private int priceCode;
+    private Price price;
 
     public Movie(String newtitle, int newpriceCode) {
         title = newtitle;
@@ -18,13 +19,9 @@ public class Movie {
     }
 
     int getFrequentRenterPoints(int daysRented) {
-        if((getPriceCode() == Movie.NEW_RELEASE) &&
-                daysRented > 1) {
-            return 2;
-        } else {
-            return 1;
-        }
+        return price.getFrequentRenterPoints(daysRented);
     }
+
 
     public int getPriceCode() {
         return price.getPriceCode();
@@ -46,7 +43,6 @@ public class Movie {
         }
     }
 
-    private Price price;
 
     public String getTitle (){
         return title;
