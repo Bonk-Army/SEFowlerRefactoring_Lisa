@@ -10,7 +10,7 @@ public class Movie {
 
     public Movie(String newtitle, int newpriceCode) {
         title = newtitle;
-        priceCode = newpriceCode;
+        setPriceCode(priceCode);
     }
 
     double getCharge(int daysRented) {
