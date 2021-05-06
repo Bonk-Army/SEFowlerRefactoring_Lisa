@@ -1,6 +1,6 @@
 package se.refactoring.fowler.exercise.main;
 
-class Rental {
+public class Rental {
     private Movie movie;
     private int daysRented;
 
@@ -9,12 +9,11 @@ class Rental {
         daysRented = newdaysRented;
     }
 
-
-    double getCharge() {
+    public double getCharge() {
         return movie.getCharge(daysRented);
     }
 
-    int getFrequentRenterPoints() {
+    public int getFrequentRenterPoints() {
         return movie.getFrequentRenterPoints(daysRented);
     }
 
@@ -24,10 +23,5 @@ class Rental {
     public Movie getMovie() {
         return movie;
     }
-
-    private double amountFor(Rental aRental) {
-        return aRental.getCharge();
-    }
-
 
 }

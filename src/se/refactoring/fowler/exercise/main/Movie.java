@@ -9,22 +9,17 @@ public class Movie {
     private int priceCode;
     private Price price;
 
-    public Movie(String newtitle, int newpriceCode) {
+    public Movie(String newtitle, int priceCode) {
         title = newtitle;
         setPriceCode(priceCode);
     }
 
-    double getCharge(int daysRented) {
+    public double getCharge(int daysRented) {
         return price.getCharge(daysRented);
     }
 
-    int getFrequentRenterPoints(int daysRented) {
+    public int getFrequentRenterPoints(int daysRented) {
         return price.getFrequentRenterPoints(daysRented);
-    }
-
-
-    public int getPriceCode() {
-        return price.getPriceCode();
     }
 
     public void setPriceCode(int arg) {
@@ -46,5 +41,9 @@ public class Movie {
 
     public String getTitle (){
         return title;
+    }
+
+    public int getPriceCode() {
+        return priceCode;
     }
 }
