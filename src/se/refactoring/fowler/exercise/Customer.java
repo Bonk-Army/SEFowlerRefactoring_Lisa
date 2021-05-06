@@ -5,6 +5,7 @@ import java.util.*;
 class Customer {
     private String name;
     private Vector rentals = new Vector();
+
     public Customer (String newname){
         name = newname;
     }
@@ -14,6 +15,14 @@ class Customer {
     }
     public String getName (){
         return name;
+    }
+
+    public String statementFooterLine(double totalAmount, int frequentRenterPoints ) {
+        var result = "";
+        //add footer lines
+        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
+        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        return result;
     }
     public String statement() {
         double totalAmount = 0;
@@ -36,28 +45,24 @@ class Customer {
             result += "\t" + each.getMovie().getTitle()+ "\t" + "\t" + each.getDaysRented() + "\t" + String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
         }
-        //add footer lines
-        result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
-        result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
+        result = statementFooterLine(totalAmount,frequentRenterPoints);
         return result;
     }
 
     private double amountFor(Rental each) {
         double thisAmount = 0;
         switch (each.getMovie().getPriceCode()) {
-            case Movie.REGULAR:
+            case Movie.REGULAR -> {
                 thisAmount += 2;
                 if (each.getDaysRented() > 2)
                     thisAmount += (each.getDaysRented() - 2) * 1.5;
-                break;
-            case Movie.NEW_RELEASE:
-                thisAmount += each.getDaysRented() * 3;
-                break;
-            case Movie.CHILDRENS:
+            }
+            case Movie.NEW_RELEASE -> thisAmount += each.getDaysRented() * 3;
+            case Movie.CHILDRENS -> {
                 thisAmount += 1.5;
                 if (each.getDaysRented() > 3)
                     thisAmount += (each.getDaysRented() - 3) * 1.5;
-                break;
+            }
         }
         return thisAmount;
     }
