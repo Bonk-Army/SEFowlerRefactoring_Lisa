@@ -1,7 +1,5 @@
 package se.refactoring.fowler.exercise;
 
-import java.lang.*;
-
 /**
  * Note that Java console applications need to be run through the java runtime
  * by running "java -jar JarFile.jar" in the command line.
@@ -14,7 +12,7 @@ public class Program
      */
     
     
-    public static void main(String args[]) 
+    public static void main(String[] args)
     {
         String result;
         System.out.println("Welcome to the se.refactoring.fowler.exercise.Movie Store");
