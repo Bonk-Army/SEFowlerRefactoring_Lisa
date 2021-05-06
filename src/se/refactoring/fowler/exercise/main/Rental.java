@@ -1,4 +1,4 @@
-package se.refactoring.fowler.exercise;
+package se.refactoring.fowler.exercise.main;
 
 class Rental {
     private Movie movie;

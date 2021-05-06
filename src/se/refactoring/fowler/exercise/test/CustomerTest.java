@@ -1,4 +1,4 @@
-package se.refactoring.fowler.exercise;
+package se.refactoring.fowler.exercise.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 

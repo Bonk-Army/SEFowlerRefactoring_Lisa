@@ -1,4 +1,4 @@
-package se.refactoring.fowler.exercise;
+package se.refactoring.fowler.exercise.main;
 
 public class Movie {
     public static final int CHILDRENS = 2;

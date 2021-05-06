@@ -1,4 +1,4 @@
-package se.refactoring.fowler.exercise;
+package se.refactoring.fowler.exercise.main;
 
 public class ChildrensPrice extends Price {
     @Override
